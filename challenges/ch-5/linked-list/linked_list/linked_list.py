@@ -34,7 +34,7 @@ class LinkedList:
         except Exception as error:
           raise Exception(f"ooops!! : {error}")
 
-    def content(self, n):
+    def includes(self, n):
         try:
           x = False
 
