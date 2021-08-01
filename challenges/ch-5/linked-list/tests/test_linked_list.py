@@ -1,12 +1,10 @@
 from linked_list import __version__
-from linked_list.linked_list import (LinkedList,)
+from linked_list.linked_list import LinkedList
 
 
 def test_version():
     assert __version__ == '0.1.0'
 ################################-empty linked list-#############################################
-
-
 def test_instantiate_empty_linked_list():
     empty = LinkedList()
     empty.append()
@@ -14,8 +12,6 @@ def test_instantiate_empty_linked_list():
     expected = '( null ) -> None'
     assert actual == expected
 ###############################-insert to the head-################################################
-
-
 def test_insert():
     insert = LinkedList()
     insert.append(1)
@@ -24,8 +20,6 @@ def test_insert():
     expected = 2
     assert actual == expected
 ###############################-point to the head-##################################################
-
-
 def test_head_value():
     first = LinkedList()
     first.insert(2)
@@ -33,8 +27,6 @@ def test_head_value():
     expected = 2
     assert actual == expected
 ###############################-insert multiple-##################################################
-
-
 def test_insert_and_head_value():
     multi = LinkedList()
     multi.insert('go')
@@ -44,8 +36,6 @@ def test_insert_and_head_value():
     expected = '( here ) -> ( we ) -> ( go ) -> None'
     assert actual == expected
 ###############################-return true-######################################################
-
-
 def test_includes_True():
     find = LinkedList()
     find.append(9)
@@ -58,8 +48,6 @@ def test_includes_True():
     expected = True
     assert actual == expected
 ################################-return false-#####################################################
-
-
 def test_includeses_False():
     dne = LinkedList()
     dne.append('mohammad')
@@ -69,8 +57,6 @@ def test_includeses_False():
     expected = False
     assert actual == expected
 ##################################-all values-######################################################
-
-
 def test_return_all_values():
     allv = LinkedList()
     allv.append('my')
@@ -78,4 +64,26 @@ def test_return_all_values():
     allv.append('is:')
     actual = allv.__str__()
     expected = '( my ) -> ( name ) -> ( is: ) -> None'
+    assert actual == expected
+################################-insertbefore-#######################################################
+def test_insert_before():
+    before = LinkedList()
+    before.append(1)
+    before.append(2)
+    before.append(3)
+    before.insertbefore(1, 5)
+
+    actual = before.__str__()
+    expected = '( 5 ) -> ( 1 ) -> ( 2 ) -> ( 3 ) -> None'
+    assert actual == expected
+##################################-insertafter-########################################################
+def test_insert_after():
+    after = LinkedList()
+    after.append(0)
+    after.append(1)
+    after.append(2)
+    after.insertafter(1, 5)
+
+    actual = after.__str__()
+    expected = '( 0 ) -> ( 1 ) -> ( 5 ) -> ( 2 ) -> None'
     assert actual == expected
