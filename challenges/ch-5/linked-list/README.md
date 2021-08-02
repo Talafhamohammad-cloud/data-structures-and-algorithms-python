@@ -36,13 +36,14 @@ Any exceptions or errors that come from your code should be semantic, capture-ab
 
 Node class that has properties for the value stored in the Node, and a pointer to the next Node, LinkedList class, include a head property. Upon instantiation, an empty Linked.
 and about the efficiency
-| name  |space | time |
-|#####################|
-|insert | O(1) | O(1) |
-|append | O(n) | O(n) |
-|string | O(n) | O(n) |
-|content| O(n) | O(n) |
-
+| name         |space | time |
+|##############|######|######|
+|insert        | O(1) | O(1) |
+|append        | O(n) | O(n) |
+|string        | O(n) | O(n) |
+|includes      | O(n) | O(n) |
+|insert-after  | O(1) | O(n) |
+|insert-before | O(1) | O(n) |
 ## API:
 
 ### insert
@@ -60,4 +61,11 @@ Takes any value as an argument and returns (T) if its exist and (F) if not
 ### "_str__"
 its without arguments and returns a string represent all the values in the Linked List
 
+## insert before
+this method takes two arguments the first one is the node wher i want to add before and 
+the second one the new value that i want to add 
+
+## isert after 
+it works the same as insert before but here we will add after specific node and its also contains two arguments 
+the node i want to add  after and the new value 
 
