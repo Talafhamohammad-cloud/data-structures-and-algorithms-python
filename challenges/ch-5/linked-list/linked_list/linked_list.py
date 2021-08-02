@@ -75,7 +75,6 @@ class LinkedList:
                 crrval.next.next = nextvalue
                 break
              crrval = crrval.next
-
     def insertafter(self, value, new):
         crrval = self.head
         while crrval:
@@ -85,4 +84,12 @@ class LinkedList:
                 crrval.next.next = nextvalue
                 break
             crrval = crrval.next
-#######################################################################################################
+#########################################################-ch-07-##############################################
+########### adding kth method to find k-th value from the end of a linked list-##############################
+    def kth_method(self,index):
+        try:
+            if index < 0:
+                return "your number should be greater than or equal zero"
+
+        except Exception as error :
+            raise (f'oops!! {error}') 
