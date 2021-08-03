@@ -3,7 +3,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-##########################-linkedlist class With its methods:-###
+##########################-linindexedlist class With its methods:-###
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -61,8 +61,7 @@ class LinkedList:
         except Exception as error:
           raise Exception(f"ooops!! : {error}")
 ###########################################################################################ch-06#####
-# tese methods to add insert before and insert after the append method i already added it in previos
-    
+# tese methods to add insert before and insert after the append method i already added it in previos   
     def insertbefore(self, value, new):
         crrval = self.head
         if crrval.value == value:
@@ -85,11 +84,22 @@ class LinkedList:
                 break
             crrval = crrval.next
 #########################################################-ch-07-##############################################
-########### adding kth method to find k-th value from the end of a linked list-##############################
+########### adding indexth method to find index-th value from the end of a linindexed list-###################
     def kth_method(self,index):
-        try:
-            if index < 0:
-                return "your number should be greater than or equal zero"
-
-        except Exception as error :
-            raise (f'oops!! {error}') 
+        crrval = self.head
+        linklength = 1
+        while crrval.next:
+            linklength += 1
+            crrval = crrval.next
+        crrval = self.head
+        if index >= linklength:
+            return "Not In Range"
+        elif index < 0:
+            return "ooops!!! its negative"
+        else:
+            count = linklength-index-1
+            for i in range(linklength):
+                   if i == count:
+                        return crrval.value
+            crrval = crrval.next
+#################################################################################################################

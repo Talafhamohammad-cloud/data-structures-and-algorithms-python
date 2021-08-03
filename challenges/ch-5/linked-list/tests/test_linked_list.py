@@ -107,7 +107,7 @@ def test_before_middle():
     expected = '( 1 ) -> ( added ) -> ( 2 ) -> ( 3 ) -> None'
     assert actual == expected
 ###################################-insert-after-middle-##################################################
-def test_before_middle():
+def test_after_middle():
     afmid = LinkedList()
     afmid.append(1)
     afmid.append(2)
@@ -127,3 +127,40 @@ def test_multi_to_the_end():
     actual = mend.__str__()
     expected = '( 2 ) -> ( 1 ) -> ( 5 ) -> ( 4 ) -> ( 3 ) -> None'
     assert actual == expected
+##################################-index > length-######################################################
+def test_index_greater():
+    ithgreater = LinkedList()
+    ithgreater.insert(1)
+    ithgreater.append(2)
+    ithgreater.append(3)
+    ithgreater.append(4)
+    excepted = 'Not In Range'
+    actual = ithgreater.kth_method(7)
+    assert excepted == actual
+################################-index = length-##########################################################
+def test_same():
+    same = LinkedList()
+    same.insert(4)
+    same.append(5)
+    excepted = 'Not In Range'
+    actual = same.kth_method(4)
+    assert excepted == actual
+################################-negative-index-##########################################################
+def test_negative_index():
+    negative = LinkedList()
+    negative.insert(1)
+    negative.append(2)
+    excepted = "ooops!!! its negative"
+    actual = negative.kth_method(-3)
+    assert excepted == actual
+##################################-size = 1 -test- ###########################################################
+def test_size():
+    sizeone = LinkedList()
+    sizeone.insert(10)
+    assert sizeone.kth_method(0) == 10
+#################################-happy-path-################################################################
+def test_happypath():
+    happy = LinkedList()
+    happy.insert(10)
+    happy.append(20)
+    assert happy.kth_method(1) == 10
