@@ -44,6 +44,7 @@ and about the efficiency
 |includes      | O(n) | O(n) |
 |insert-after  | O(1) | O(n) |
 |insert-before | O(1) | O(n) |
+|kth-method    | O(1) | O(n) |
 ## API:
 
 ### insert
@@ -68,4 +69,6 @@ the second one the new value that i want to add
 ## isert after 
 it works the same as insert before but here we will add after specific node and its also contains two arguments 
 the node i want to add  after and the new value 
+## Kth-method
+Takes the index number as a parameter and its  Return node value from the end of the linked_list.
 
