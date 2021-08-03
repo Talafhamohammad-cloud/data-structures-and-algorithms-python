@@ -102,4 +102,13 @@ class LinkedList:
                    if i == count:
                         return crrval.value
             crrval = crrval.next
-#################################################################################################################
+###################################################-ch-08-##############################################################
+########################### adding method to merge two linked list togother############################################
+def zip(first, second):
+    zipped=first
+    last_node = first.head
+    while last_node.next is not None:
+        last_node = last_node.next
+    last_node.next = second.head
+
+    return zipped
