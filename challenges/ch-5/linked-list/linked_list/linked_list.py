@@ -4,6 +4,8 @@ class Node:
         self.value = value
         self.next = None
 ##########################-linindexedlist class With its methods:-###
+
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -46,7 +48,7 @@ class LinkedList:
             output = output + f"( {value} ) -> "
             crrval = crrval.next
         return output
-     
+
     def append(self, value='null'):
         try:
           node = Node(value)
@@ -61,7 +63,8 @@ class LinkedList:
         except Exception as error:
           raise Exception(f"ooops!! : {error}")
 ###########################################################################################ch-06#####
-# tese methods to add insert before and insert after the append method i already added it in previos   
+# tese methods to add insert before and insert after the append method i already added it in previos
+
     def insertbefore(self, value, new):
         crrval = self.head
         if crrval.value == value:
@@ -74,6 +77,7 @@ class LinkedList:
                 crrval.next.next = nextvalue
                 break
              crrval = crrval.next
+
     def insertafter(self, value, new):
         crrval = self.head
         while crrval:
@@ -85,7 +89,8 @@ class LinkedList:
             crrval = crrval.next
 #########################################################-ch-07-##############################################
 ########### adding indexth method to find index-th value from the end of a linindexed list-###################
-    def kth_method(self,index):
+
+    def kth_method(self, index):
         crrval = self.head
         linklength = 1
         while crrval.next:
@@ -104,11 +109,12 @@ class LinkedList:
             crrval = crrval.next
 ###################################################-ch-08-##############################################################
 ########################### adding method to merge two linked list togother############################################
-def zip(first, second):
-    zipped=first
-    last_node = first.head
-    while last_node.next is not None:
-        last_node = last_node.next
-    last_node.next = second.head
+    def zip_Lists(self,first,second):
+        f1=first.head
+        f2=second.head
+        f1.next=f2
+        f1=f1.insertafter(f1.next,f2.next)
+        
 
-    return zipped
+
+
