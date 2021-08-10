@@ -32,3 +32,4 @@ Create stack and queue classes and add to stack push, pop, peek and is empty met
 -peek When you peek you will view the value of the front Node in the queue. If called when the queue is empty an exception will be raised.
 -is_empty returns true when queue is empty otherwise returns false.
 ## PR link:
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/19 
