@@ -35,4 +35,4 @@ class PseudoQueue:
             return poped
 ###########################################################
 ## PR link:
-            
+ https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/21            
