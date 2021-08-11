@@ -28,3 +28,4 @@ def validate_brackets(string):
         return "invalid"
 
 ## PR link:
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/23 
