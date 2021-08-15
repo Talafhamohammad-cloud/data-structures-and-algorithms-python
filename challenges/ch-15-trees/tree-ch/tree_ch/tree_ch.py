@@ -45,6 +45,24 @@ class binarytree:
                 self.values += [node.value]
                 return self.values
             return ordering(self.root)
+#######################################################(code challenge-16)########################
+# ch-16 adding new method to find the max-value in numaric tree 
+##################################################################################################
+    def max_tree(self):
+        if not self.root:
+            return "empty tree"
+        res = self.root.value   
+        def max_val(node):
+            nonlocal res
+            lres =node.val
+            if (lres > res):
+               res = lres
+               max_val(res)
+            rres = node.val   
+            if (rres > res):
+              res = rres
+              max_val(res)
+              return res     
 ##################################################################################################
 class binarysearchtree(binarytree):
     def add(self, value):
@@ -80,8 +98,6 @@ class binarysearchtree(binarytree):
                     if current.right == None:
                         return "dose not exist"
                     current = current.right
-
-
 ####################################################################
 # Driver code "for quick test"
 #if __name__ == '__main__':
@@ -99,3 +115,4 @@ class binarysearchtree(binarytree):
 #print(tree.Contains(6))
 #print(tree2.Contains(6))
 ####################################################################################################
+# ch-16 adding 
