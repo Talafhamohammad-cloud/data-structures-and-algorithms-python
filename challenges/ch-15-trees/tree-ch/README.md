@@ -37,3 +37,34 @@ Returns: boolean indicating whether or not the value is in the tree at least onc
 ***-Contains: to check if the value exist in the tree or not***
 ## PR link:
 https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/26 
+
+###################################################################################################
+##############################   code challenge-16 (max-tree)          ############################
+###################################################################################################
+# Challenge Summary
+adding new method to the binary tree class that will find the maximum value in given numaric tree 
+## Whiteboard Process
+![image](binary_tree_maxval.jpg)
+## Approach & Efficiency
+the approche i worked in that i taked the values of the tree after traverse and put them in an array
+and take the max value of that array 
+Big O:
+Time: O(n)
+Space: O(1)
+
+## Solution
+
+def max_value(self):
+          self.values = []
+          if self.root == None:
+                return "empty tree"
+
+          def ordering(node):
+                self.values += [node.value]
+                if node.left:
+                    ordering(node.left)
+                if node.right:
+                    ordering(node.right)
+                return max(self.values)
+          return ordering(self.root)
+# PR link:

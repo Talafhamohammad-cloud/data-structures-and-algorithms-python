@@ -1,3 +1,4 @@
+
 class Node:
     def __init__(self, val):
         self.value = val
@@ -48,21 +49,18 @@ class binarytree:
 #######################################################(code challenge-16)########################
 # ch-16 adding new method to find the max-value in numaric tree 
 ##################################################################################################
-    def max_tree(self):
-        if not self.root:
-            return "empty tree"
-        res = self.root.value   
-        def max_val(node):
-            nonlocal res
-            lres =node.val
-            if (lres > res):
-               res = lres
-               max_val(res)
-            rres = node.val   
-            if (rres > res):
-              res = rres
-              max_val(res)
-              return res     
+    def max_value(self):
+          self.values = []
+          if self.root == None:
+                return "empty tree"
+          def ordering(node):
+                self.values += [node.value]
+                if node.left:
+                    ordering(node.left)
+                if node.right:
+                    ordering(node.right)
+                return max(self.values)
+          return ordering(self.root)
 ##################################################################################################
 class binarysearchtree(binarytree):
     def add(self, value):
