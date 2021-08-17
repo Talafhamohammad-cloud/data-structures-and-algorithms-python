@@ -69,3 +69,33 @@ def max_value(self):
           return ordering(self.root)
 # PR link:
 https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/28
+###################################################################################################
+####################################################################################################
+##########-challenge 17-############################################################################
+# Challenge Summary
+Write a function called breadth first take arg as tree and return list of all values in the tree, in the order they were encountered
+## Whiteboard Process
+![image](breadthFirst.jpg)
+## Approach & Efficiency
+Time: O(n)
+Space: O(1
+## Solution
+def breadth_first(self):
+        if self.root == None:
+            return "empty tree"
+        else:
+            queue = Queue()
+            queue.enqueue(self.root)
+            finalresult = []
+
+            while not queue.isEmpty():
+                front = queue.dequeue()
+                finalresult.append(front.value)
+                if front.left:
+                    queue.enqueue(front.left)
+                if front.right:
+                    queue.enqueue(front.left)
+        return finalresult
+
+# PR link :
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/31

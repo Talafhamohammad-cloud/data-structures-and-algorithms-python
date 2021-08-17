@@ -1,6 +1,6 @@
 from tree_ch import __version__
-from tree_ch.tree_ch import binarysearchtree
-
+from tree_ch.tree_ch import binarysearchtree,binarytree,Node
+import pytest
 
 def test_version():
     assert __version__ == '0.1.0'
@@ -144,4 +144,24 @@ def test_value_max_3():
     actual = tree.max_value()
     expected = "empty tree"
     assert actual == expected
+
 #######################################################################################################
+def test_breadth_frist():
+    tree = binarytree()
+    tree.root = Node
+def test_breadth(test_breadth_frist):
+     actual = test_breadth_frist.breadth_first()
+     expected = [1, 5, 2, 7, 3, 11]
+     assert actual == expected
+
+@pytest.fixture
+def test_breadth():
+  tree = binarytree()
+  tree.root = Node(1)
+  tree.root.right.right = Node(7)
+  tree.root.right.right.right = Node(11)
+  tree.root.right = Node(5)
+  tree.root.right.left = Node(2)
+  tree.root.right.left.right = Node(3)
+  return tree
+

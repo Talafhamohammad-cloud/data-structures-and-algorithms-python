@@ -1,4 +1,38 @@
 
+class Nodet:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+class Queue():
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    def enqueue(self, value):
+        node = Nodet(value)
+        if self.front == None:
+            self.front = node
+            self.rear = node
+        else:
+            self.rear.next = node
+            self.rear = node
+
+    def dequeue(self):
+        try:
+            self.front.value
+        except:
+            return "Empty queue"
+        else:
+            temp = self.front
+            self.front = temp.next
+            temp.next = None
+            return temp.value
+
+    def isEmpty(self):
+        if self.front == None and self.rear == None:
+            return True
+        else:
+            return False
 class Node:
     def __init__(self, val):
         self.value = val
@@ -64,9 +98,22 @@ class binarytree:
 #######################################################(code challenge-17)###############################################
 # ch-17 adding new method called breadth-first Return: list of all values in the tree, in the order they were encountered
 #########################################################################################################################
-    def breadth_first(self):
-        pass 
 
+    def breadth_first(self):
+        if self.root == None:
+            return "empty tree"
+        else:
+            queue = Queue()
+            queue.enqueue(self.root)
+            finalresult = []
+            while queue != queue.isEmpty():
+                front = queue.dequeue()
+                finalresult.append(front.value)
+                if front.left:
+                    queue.enqueue(front.left)
+                if front.right:
+                    queue.enqueue(front.left)
+        return finalresult
 #########################################################################################################################        
 class binarysearchtree(binarytree):
     def add(self, value):
