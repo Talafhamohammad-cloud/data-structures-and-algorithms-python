@@ -61,7 +61,13 @@ class binarytree:
                     ordering(node.right)
                 return max(self.values)
           return ordering(self.root)
-##################################################################################################
+#######################################################(code challenge-17)###############################################
+# ch-17 adding new method called breadth-first Return: list of all values in the tree, in the order they were encountered
+#########################################################################################################################
+    def breadth_first(self):
+        pass 
+
+#########################################################################################################################        
 class binarysearchtree(binarytree):
     def add(self, value):
         if self.root == None:
