@@ -34,3 +34,5 @@ def fizz_buzz(ktree):
         ordering(root.left)
         ordering(root.right)
         return transformation
+# PR link :
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/33
