@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ch-26"
+name = "insertion_sort"
 version = "0.1.0"
 description = ""
 authors = ["Talafhamohammad-cloud <josephtelfah@icloud.com>"]
