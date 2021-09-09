@@ -124,3 +124,19 @@ class Hashtable:
 
         return self.str_bucket
 
+##################################################################################################################
+def repeatedword(string):
+    if not string:
+        return "empty"
+    strng =[".",",","-"]  
+    for char in strng:  
+     string = (string.replace(char, "")).lower()
+    words = string.split()
+    new_hashtable = Hashtable()
+    for word in words:
+        if new_hashtable.contains(word):
+            return word
+        else:
+            new_hashtable.add(word, word)
+    return "There is no duplication"
+#########################################################################
