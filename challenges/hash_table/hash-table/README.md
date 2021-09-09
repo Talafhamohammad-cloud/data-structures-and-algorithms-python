@@ -76,7 +76,7 @@ Return: string
 
 ## Whiteboard Process
 
-![image](repeatedwords.jpg)
+![image](hash-table/repeatedwords.jpg)
 
 ## Approach & Efficiency
 Time O(n)
@@ -98,8 +98,38 @@ Space O(1)
      return "There is no dublication"
 
 ## PR LINK:
-https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/46
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/47
 
-####################################################################################
+#########################################################################################
+# ch-32(tree intersection)
+# Challenge Summary
+Write a function called tree intersection
+Arguments: two binary trees
+Return: array contains all values exist in both of trees 
+## Whiteboard Process
 
+![image](hash-table/intersection.jpg)
+## Approach & Efficiency
+Time O(2n)
+Space O(n)
+## Solution
+def tree_intersection(t1, t2):
+    if not t1.root or not t2.root:
+        return "there is empty one or both of them"
+    arr1 = t1.pre_order()
+    arr2 = t2.pre_order()
+    t1itersectt2 = []
+    new_hashtable = Hashtable()
+    for node in arr1:
+     new_hashtable.add(node, node)
+    for element in arr2:
+        if new_hashtable.contains(element):
+            t1itersectt2.append(element)
+
+    if t1itersectt2 == []:
+        return "intersection = phi(Φ)"
+    else:
+     return t1itersectt2
+## PR LINK:
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/48
 
