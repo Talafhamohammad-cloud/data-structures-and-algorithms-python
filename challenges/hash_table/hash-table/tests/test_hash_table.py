@@ -46,3 +46,36 @@ def test_hash_index():
     expected = 636
     assert actual == expected
 ##############################################################
+######################## TEST REPEATED WORDS #################
+##############################################################
+def test_empty():
+    string = ''
+    actual = repeatedword(string)
+    expected = 'empty'
+    assert actual == expected
+#########################################################
+def test_one():
+    string = "Once upon a time, there was a brave princess who"
+    actual = repeatedword(string)
+    expected = "a"
+    assert actual == expected
+############################################################
+def test_two():
+    string = "It was the best of times, it was the worst of times," 
+    actual = repeatedword(string)
+    expected = "it"
+    assert actual == expected
+#############################################################
+def test_three():
+    string = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York"
+    actual = repeatedword(string)
+    expected = "summer"
+    assert actual == expected
+################################################################
+def test_four():
+    string = "Hello from the other side "
+    actual = repeatedword(string)
+    expected = "There is no duplication"
+    assert actual == expected
+################################################################
+
