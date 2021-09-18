@@ -48,3 +48,48 @@ size:
 
 ## PR LINK:
 https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/50 
+
+########################################################################
+########### code challenge-36 (graph-breadth-first)####################
+#######################################################################
+
+# Challenge Summary
+Extending an Implementation to Implement a breadth-first traversal on a graph.
+Write the following method for the Graph class:
+breadth first
+Arguments: vertex
+Return: A collection of vertices in the order they were visited.
+Display the collection
+## Whiteboard Process:
+![imgs](img/whiteBoerd.jpg)
+
+## Approach & Efficiency:
+Time: O(n^2)
+Space: O(n)
+## Solution:
+     def breadthfirst(self, vertix):
+        if vertix not in self.adjacency_list:
+            return 'vertix DNE in Graph'
+        elif self.adjacency_list[vertix] == []:
+            return 'verteix has no adjecent'
+        breadth = Queue()
+        visited = []
+        vertices = []
+        breadth.enqueue(vertix)
+        visited.append(vertix)
+
+        while breadth.front:
+            front = breadth.dequeue()
+            vertices.append(front.value)
+
+            for child in self.adjacency_list[front]:
+
+                if child.vertix not in visited:
+                    visited.append(child.vertix)
+                    breadth.enqueue(child.vertix)
+
+        return vertices
+
+## NOTE: the challenge is solved with strech goals to find if there is path between two vertices or not         
+## PR LINK :
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/51
