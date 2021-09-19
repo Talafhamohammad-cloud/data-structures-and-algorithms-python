@@ -111,7 +111,7 @@ class Graph:
 
 
 ######################################################################
-####################### (stretch goals for breadth first)##############
+####################### (stretch goals for breadth first)#############
 ######################################################################
     def path_existance(self, vertex1, vertex2):
         """
@@ -133,7 +133,28 @@ class Graph:
                 return "there is no path between them"
             else :
                 return "there is path between them"
-######################################################################
+#######################################################################
+########### code challenge-37 (graph-business-trip)####################
+#######################################################################
+def businesstrip(Graph,array):
+    path1 = False
+    path2 = False
+    total = 0
+    for vertix in range(len(array) - 1):
+        adjacency = Graph.adjacency_list[array[vertix]]
+        path2 = False
+        for edges in adjacency:
+            if array[vertix + 1] == edges.vertix:
+                total += edges.weight
+                path1 = True
+                path2 = True
+    path = path1 and path2
+    if not path:
+        total = 0
+        path = False
+        return f'{path},${total}'
+    return f'{path},${total}'
+#################################################################################    
 if __name__ == "__main__":
     G = Graph()
     a=G.add_vertex('0')
@@ -161,6 +182,7 @@ if __name__ == "__main__":
     G2.add_edge(arendelle, metroville, 1)
     G2.add_edge(arendelle, monstroplolis, 1)
     G2.add_edge(metroville, arendelle, 1)
+    G2.add_edge(metroville, pandora, 1)
     G2.add_edge(metroville, monstroplolis, 1)
     G2.add_edge(metroville, narnia, 1)
     G2.add_edge(metroville, naboo, 1)
@@ -186,5 +208,33 @@ if __name__ == "__main__":
     G3.add_edge(b, d)
     G3.add_edge(d, b)
     G3.add_edge(d, e)
+    #####################################
+    G4 = Graph()
+    pandora = G4.add_vertex('pandora')
+    arendelle = G4.add_vertex('arendelle')
+    metroville = G4.add_vertex('metroville')
+    narina = G4.add_vertex('narina')
+    naboo = G4.add_vertex('naboo')
+    manstropolis = G4.add_vertex('manstropolis')
+    G4.add_edge(pandora, arendelle, 150)
+    G4.add_edge(pandora, metroville, 82)
+    G4.add_edge(arendelle, pandora, 150)
+    G4.add_edge(arendelle, metroville, 99)
+    G4.add_edge(arendelle, manstropolis, 42)
+    G4.add_edge(metroville, pandora, 82)
+    G4.add_edge(metroville, arendelle, 99)
+    G4.add_edge(metroville, manstropolis, 105)
+    G4.add_edge(metroville, naboo, 26)
+    G4.add_edge(metroville, narina, 37)
+    G4.add_edge(narina, metroville, 37)
+    G4.add_edge(narina, naboo, 250)
+    G4.add_edge(naboo, narina, 250)
+    G4.add_edge(naboo, metroville, 26)
+    G4.add_edge(naboo, manstropolis, 73)
+    G4.add_edge(manstropolis, naboo, 73)
+    G4.add_edge(manstropolis, arendelle, 42)
+    G4.add_edge(manstropolis, metroville, 105)
+    #######################################################
     #print(G2.breadthfirst(naboo))
-    print(G3.path_existance(a, b))
+    #print(G3.path_existance(a, b))
+    print(businesstrip(G4, [naboo, pandora]))

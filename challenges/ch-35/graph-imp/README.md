@@ -93,3 +93,38 @@ Space: O(n)
 ## NOTE: the challenge is solved with strech goals to find if there is path between two vertices or not         
 ## PR LINK :
 https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/51
+
+#######################################################################
+########### code challenge-37 (graph-business-trip)####################
+#######################################################################
+# Challenge Summary
+Write a function called business trip
+Arguments: graph, array of city names
+Return: cost or null
+## Whiteboard Process
+![image](img/trip.jpg)
+## Approach & Efficiency
+Time = O(n^2)
+Space = O(n)
+## Solution
+  def businesstrip(Graph,array):
+    path1 = False
+    path2 = False
+    total = 0
+    for vertix in range(len(array) - 1):
+        adjacency = Graph.adjacency_list[array[vertix]]
+        path2 = False
+        for edges in adjacency:
+            if array[vertix + 1] == edges.vertix:
+                total += edges.weight
+                path1 = True
+                path2 = True
+    path = path1 and path2
+    if not path:
+        total = 0
+        path = False
+        return f'{path},${total}'
+    return f'{path},${total}'
+
+## PR LINK:
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/52
