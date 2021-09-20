@@ -108,8 +108,6 @@ class Graph:
                     breadth.enqueue(child.vertix)
 
         return vertices
-
-
 ######################################################################
 ####################### (stretch goals for breadth first)#############
 ######################################################################
@@ -134,6 +132,26 @@ class Graph:
             else :
                 return "there is path between them"
 #######################################################################
+########### code challenge-38 (graph-depth-first)#####################
+#######################################################################
+    def depthfirst(self, v):
+        finalresult = []
+        finalresult.append(v.value)
+        if v not in self.adjacency_list:
+            return 'vertix DNE in Graph'
+        elif self.adjacency_list[v] == []:
+            return 'verteix has no adjecent'
+        def trail(v):
+            neighbors = self.adjacency_list[v]
+            for edge in neighbors:
+                vertices = edge.vertix.value
+
+                if vertices not in finalresult:
+                    finalresult.append(vertices)
+                    trail(edge.vertix)
+        trail(v)
+        return finalresult
+#######################################################################
 ########### code challenge-37 (graph-business-trip)####################
 #######################################################################
 def businesstrip(Graph,array):
@@ -154,7 +172,7 @@ def businesstrip(Graph,array):
         path = False
         return f'{path},${total}'
     return f'{path},${total}'
-#################################################################################    
+#######################################################################
 if __name__ == "__main__":
     G = Graph()
     a=G.add_vertex('0')
@@ -237,4 +255,4 @@ if __name__ == "__main__":
     #######################################################
     #print(G2.breadthfirst(naboo))
     #print(G3.path_existance(a, b))
-    print(businesstrip(G4, [naboo, pandora]))
+    print(G4.depthfirst(narina))

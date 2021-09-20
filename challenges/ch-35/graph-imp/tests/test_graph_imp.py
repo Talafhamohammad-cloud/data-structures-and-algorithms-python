@@ -248,3 +248,67 @@ def test_trip_three():
     G4.add_edge(manstropolis, metroville, 105)
     assert businesstrip(G4, [pandora, metroville]) == "True,$82"
 ######################################################################################
+#######################################################################
+########### code challenge-38 (graph-depth-first)#####################
+#######################################################################
+def test_depth_one():
+    G4 = Graph()
+    pandora = G4.add_vertex('pandora')
+    arendelle = G4.add_vertex('arendelle')
+    metroville = G4.add_vertex('metroville')
+    narina = G4.add_vertex('narina')
+    naboo = G4.add_vertex('naboo')
+    manstropolis = G4.add_vertex('manstropolis')
+    G4.add_edge(pandora, arendelle, 150)
+    G4.add_edge(pandora, metroville, 82)
+    G4.add_edge(arendelle, pandora, 150)
+    G4.add_edge(arendelle, metroville, 99)
+    G4.add_edge(arendelle, manstropolis, 42)
+    G4.add_edge(metroville, pandora, 82)
+    G4.add_edge(metroville, arendelle, 99)
+    G4.add_edge(metroville, manstropolis, 105)
+    G4.add_edge(metroville, naboo, 26)
+    G4.add_edge(metroville, narina, 37)
+    G4.add_edge(narina, metroville, 37)
+    G4.add_edge(narina, naboo, 250)
+    G4.add_edge(naboo, narina, 250)
+    G4.add_edge(naboo, metroville, 26)
+    G4.add_edge(naboo, manstropolis, 73)
+    G4.add_edge(manstropolis, naboo, 73)
+    G4.add_edge(manstropolis, arendelle, 42)
+    G4.add_edge(manstropolis, metroville, 105)
+    assert G4.depthfirst(pandora) == ['pandora', 'arendelle', 'metroville', 'manstropolis', 'naboo', 'narina']
+##################################################################################################################
+def test_depth_two():
+    G3 = Graph()
+    a = G3.add_vertex('mohammad')
+    b = G3.add_vertex('khaled')
+    c = G3.add_vertex('ahmad')
+    d = G3.add_vertex('fayad')
+    e = G3.add_vertex('Talafha')
+    f = G3.add_vertex('name')
+    G3.add_edge(a, d)
+    G3.add_edge(a, c)
+    G3.add_edge(c, a)
+    G3.add_edge(b, d)
+    G3.add_edge(d, b)
+    G3.add_edge(d, e)
+    assert G3.depthfirst(a) == ['mohammad', 'fayad', 'khaled', 'Talafha', 'ahmad']
+#######################################################################################################################
+def test_depth_three():
+    G3 = Graph()
+    a = G3.add_vertex('mohammad')
+    b = G3.add_vertex('khaled')
+    c = G3.add_vertex('ahmad')
+    d = G3.add_vertex('fayad')
+    e = G3.add_vertex('Talafha')
+    f = G3.add_vertex('name')
+    G3.add_edge(a, d)
+    G3.add_edge(a, c)
+    G3.add_edge(c, a)
+    G3.add_edge(b, d)
+    G3.add_edge(d, b)
+    G3.add_edge(d, e)
+    assert G3.depthfirst(f) == 'verteix has no adjecent'
+##################################################################################################################
+
