@@ -128,3 +128,39 @@ Space = O(n)
 
 ## PR LINK:
 https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/52
+
+
+#######################################################################
+########### code challenge-38 (graph-depth-first)#####################
+#######################################################################
+# Challenge Summary
+Write the following method for the Graph class:
+depth first
+Arguments: Node (Starting point of search)
+Return: A collection of nodes in their pre-order depth-first traversal order
+Display the collection
+## Whiteboard Process
+![image](img/depthfirst.jpg)
+## Approach & Efficiency
+Time = O(n^2)
+Space = O(n)
+## Solution
+     def depthfirst(self, v):
+        finalresult = []
+        finalresult.append(v.value)
+        if v not in self.adjacency_list:
+            return 'vertix DNE in Graph'
+        elif self.adjacency_list[v] == []:
+            return 'verteix has no adjecent'
+        def trail(v):
+            neighbors = self.adjacency_list[v]
+            for edge in neighbors:
+                vertices = edge.vertix.value
+
+                if vertices not in finalresult:
+                    finalresult.append(vertices)
+                    trail(edge.vertix)
+        trail(v)
+        return finalresult
+## PR LINK:
+https://github.com/Talafhamohammad-cloud/data-structures-and-algorithms-python/pull/53
